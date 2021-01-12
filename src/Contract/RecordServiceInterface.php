@@ -9,11 +9,23 @@ interface RecordServiceInterface {
     /**
      * 大表投注紀錄
      *
-     * @param string $operatorCode
-     * @param array $inputs
+     * @param string $operatorCode 營商代碼
+     * @param array $requireInputs 必填欄位
      * @return array
      */
-    function betlogs(string $operatorCode, array $inputs): array;
+    function betlogs(string $operatorCode, array $requireInputs): array;
+
+    /**
+     * 小表投注紀錄
+     *
+     * @param string $operatorCode 營商代碼
+     * @param string $vendorCode 遊戲商代碼
+     * @param array $requireInputs 必填欄位
+     * @param array $extraInputs 額外欄位
+     * @param array $rawData 原始資料
+     * @return array
+     */
+    function betlog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
 
 }
 
