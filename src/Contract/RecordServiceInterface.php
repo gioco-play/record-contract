@@ -27,5 +27,15 @@ interface RecordServiceInterface {
      */
     function betlog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
 
+    /**
+     * 查詢小表注單
+     *
+     * @param string $operatorCode
+     * @param string $vendorCode
+     * @param string $betId
+     * @return array
+     */
+    function queryBetlog(string $operatorCode, string $vendorCode, string $betId): array;
+
 }
 
