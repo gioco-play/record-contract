@@ -37,5 +37,15 @@ interface RecordServiceInterface {
      */
     function queryBetlog(string $operatorCode, string $vendorCode, string $betId): array;
 
+
+    /**
+     * 儲存疑慮注單
+     *
+     * @param string $operatorCode
+     * @param string $vendorCode
+     * @param array $betlog
+     * @return array
+     */
+    function suspectBetlog(string $operatorCode, string $vendorCode, array $betlog): array;
 }
 
