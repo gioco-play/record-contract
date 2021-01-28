@@ -44,8 +44,8 @@ interface RecordServiceInterface {
      * @param string $operatorCode
      * @param string $vendorCode
      * @param array $betlog
-     * @return array
+     * @return mixed
      */
-    function suspectBetlog(string $operatorCode, string $vendorCode, array $betlog): array;
+    function suspectBetlog(string $operatorCode, string $vendorCode, array $betlog);
 }
 
