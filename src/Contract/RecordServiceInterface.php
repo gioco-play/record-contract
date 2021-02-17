@@ -35,7 +35,7 @@ interface RecordServiceInterface {
      * @param string $betId
      * @return array
      */
-    function queryBetlog(string $operatorCode, string $vendorCode, string $betId): array;
+    function queryBetlog(string $operatorCode, string $vendorCode, string $betId, string $searchField = 'bet_id'): array;
 
 
     /**
