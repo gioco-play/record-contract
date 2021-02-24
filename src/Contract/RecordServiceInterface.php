@@ -50,5 +50,17 @@ interface RecordServiceInterface {
      */
     function suspectBetlog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
 
+    /**
+     * 儲存疑慮注單
+     *
+     * @param string $operatorCode 營商代碼
+     * @param string $vendorCode 遊戲商代碼
+     * @param array $requireInputs 必填欄位
+     * @param array $extraInputs 額外欄位
+     * @param array $rawData 原始資料
+     * @return array
+     */
+    function gameBonusTransLog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
+
 }
 
