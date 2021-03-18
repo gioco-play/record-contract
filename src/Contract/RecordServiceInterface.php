@@ -23,9 +23,10 @@ interface RecordServiceInterface {
      * @param array $requireInputs 必填欄位
      * @param array $extraInputs 額外欄位
      * @param array $rawData 原始資料
+     * @param array $needCreatedAt 產生建立時間
      * @return array
      */
-    function betlog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
+    function betlog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData, bool $needCreatedAt = true): array;
 
     /**
      * 查詢小表注單
@@ -51,7 +52,7 @@ interface RecordServiceInterface {
     function suspectBetlog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
 
     /**
-     * 儲存疑慮注單
+     * 儲存紅利注單
      *
      * @param string $operatorCode 營商代碼
      * @param string $vendorCode 遊戲商代碼
