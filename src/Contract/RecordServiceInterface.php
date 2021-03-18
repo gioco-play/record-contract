@@ -23,7 +23,7 @@ interface RecordServiceInterface {
      * @param array $requireInputs 必填欄位
      * @param array $extraInputs 額外欄位
      * @param array $rawData 原始資料
-     * @param array $needCreatedAt 產生建立時間
+     * @param bool $needCreatedAt 產生建立時間
      * @return array
      */
     function betlog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData, bool $needCreatedAt = true): array;
