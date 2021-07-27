@@ -25,6 +25,15 @@ interface RecordServiceInterface {
     function betlogsToPostgres(string $operatorCode, array $requireInputs): array;
 
     /**
+     * 大表投注紀錄(多筆寫入postgres)
+     *
+     * @param string $operatorCode
+     * @param array $betlogs
+     * @return array
+     */
+    function betlogsToPostgresMultiple(string $operatorCode, array $betlogs): array;
+
+    /**
      * 小表投注紀錄
      *
      * @param string $operatorCode 營商代碼
@@ -37,6 +46,15 @@ interface RecordServiceInterface {
      */
     function betlog(string $operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData, bool $needCreatedAt = true): array;
 
+    /**
+     * 小表投注紀錄（多筆）
+     *
+     * @param string $operatorCode
+     * @param string $vendorCode
+     * @param array $betlogs
+     * @return array
+     */
+    function betlogMultiple(string $operatorCode, string $vendorCode, array $betlogs): array;
     /**
      * 查詢小表注單
      *
