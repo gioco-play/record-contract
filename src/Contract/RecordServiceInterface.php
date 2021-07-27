@@ -54,7 +54,7 @@ interface RecordServiceInterface {
      * @param array $betlogs
      * @return array
      */
-    function betlogMultiple(string $operatorCode, string $vendorCode, array $betlogs): array;
+    function betlogMultiple(string $operatorCode, string $vendorCode, array $betlogs, bool $needCreatedAt = true): array;
     /**
      * 查詢小表注單
      *
