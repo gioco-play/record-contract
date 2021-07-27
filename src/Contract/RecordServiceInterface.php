@@ -28,10 +28,11 @@ interface RecordServiceInterface {
      * 大表投注紀錄(多筆寫入postgres)
      *
      * @param string $operatorCode
+     * @param string $vendorCode
      * @param array $betlogs
      * @return array
      */
-    function betlogsToPostgresMultiple(string $operatorCode, array $betlogs): array;
+    function betlogsToPostgresMultiple(string $operatorCode, string $vendorCode, array $betlogs): array;
 
     /**
      * 小表投注紀錄
