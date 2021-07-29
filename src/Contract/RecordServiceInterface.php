@@ -56,6 +56,18 @@ interface RecordServiceInterface {
      * @return array
      */
     function betlogMultiple(string $operatorCode, string $vendorCode, array $betlogs, bool $needCreatedAt = true): array;
+
+
+    /**
+     * 更新小表的createdat
+     *
+     * @param string $operatorCode
+     * @param string $vendorCode
+     * @param array $betId
+     * @return array
+     */
+    function betlogUpdateCreateAt(string $operatorCode, string $vendorCode, array $betId): array;
+
     /**
      * 查詢小表注單
      *
