@@ -78,6 +78,15 @@ interface RecordServiceInterface {
      */
     function queryBetlog($operatorCode, string $vendorCode, string $betId, string $searchField = 'bet_id'): array;
 
+    /**
+     * 查詢大表注單
+     *
+     * @param $operatorCode
+     * @param string $traceId
+     * @param string $searchField
+     * @return array
+     */
+    function queryBetlogs($operatorCode, string $traceId, string $searchField = 'trace_id'): array;
 
     /**
      * 儲存疑慮注單
@@ -102,6 +111,5 @@ interface RecordServiceInterface {
      * @return array
      */
     function gameBonusTransLog($operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
-
 }
 
