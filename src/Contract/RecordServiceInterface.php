@@ -101,5 +101,7 @@ interface RecordServiceInterface {
      * @return array
      */
     function gameBonusTransLog($operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
+
+    function test();
 }
 
