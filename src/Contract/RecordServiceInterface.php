@@ -115,7 +115,7 @@ interface RecordServiceInterface {
                                string $playerName,
                                string $memberCode,
                                string $type,
-                               float $amount,
+                               float $vendorAmount,
                                int $transferTime,
                                string $traceId,
                                string $eventId,
