@@ -99,7 +99,7 @@ interface RecordServiceInterface {
      * @param string $playerName    必填 - GF 的玩家名稱
      * @param string $memberCode    必填 - GF 的玩家代碼
      * @param string $type          必填 - type：activity, jackpot, tip
-     * @param float $amount         必填 - 金額
+     * @param float $vendorAmount   必填 - 遊戲商金額
      * @param int $transferTime     必填 - 13 碼，毫秒 unix timestamp
      * @param string $traceId       必填 - unique id
      * @param string $eventId       必填 - 事件 id
