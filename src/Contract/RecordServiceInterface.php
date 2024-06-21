@@ -103,15 +103,11 @@ interface RecordServiceInterface {
      * @param int $transferTime     必填 - 13 碼，毫秒 unix timestamp
      * @param string $traceId       必填 - unique id
      * @param string $eventId       必填 - 事件 id
-     * @param string $gameCode      選填 - GF 的遊戲代碼
-     * @param string $betId         選填 - 需和 parentBetId 同時出現，或同時不出現
-     * @param string $parentBetId   選填 - 需和 betId 同時出現，或同時不出現
-     * @param string $memo          選填 - 註記
+     * @param array $extraInputs    選填
      * @return array
      */
     function gameBonusTransLog($operatorCode,
                                string $vendorCode,
-                               array $rawData,
                                string $playerName,
                                string $memberCode,
                                string $type,
@@ -119,10 +115,8 @@ interface RecordServiceInterface {
                                int $transferTime,
                                string $traceId,
                                string $eventId,
-                               string $gameCode = '',
-                               string $betId = '',
-                               string $parentBetId = '',
-                               string $memo = ''): array;
+                               array $extraInputs,
+                               array $rawData): array;
 
 }
 
