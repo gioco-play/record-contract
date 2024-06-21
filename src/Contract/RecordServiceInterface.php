@@ -91,15 +91,38 @@ interface RecordServiceInterface {
     function suspectBetlog($operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
 
     /**
-     * 儲存紅利注單
+     * 儲存 bonus 注單
      *
-     * @param mixed $operatorCode 營商代碼
-     * @param string $vendorCode 遊戲商代碼
-     * @param array $requireInputs 必填欄位
-     * @param array $extraInputs 額外欄位
-     * @param array $rawData 原始資料
+     * @param mixed $operatorCode   營商代碼(大寫)
+     * @param string $vendorCode    遊戲商代碼(小寫)
+     * @param array $rawData        原始資料
+     * @param string $playerName    必填 - GF 的玩家名稱
+     * @param string $memberCode    必填 - GF 的玩家代碼
+     * @param string $type          必填 - type：activity, jackpot, tip
+     * @param float $amount         必填 - 金額
+     * @param int $transferTime     必填 - 13 碼，毫秒 unix timestamp
+     * @param string $traceId       必填 - unique id
+     * @param string $eventId       必填 - 事件 id
+     * @param string $gameCode      選填 - GF 的遊戲代碼
+     * @param string $betId         選填 - 需和 parentBetId 同時出現，或同時不出現
+     * @param string $parentBetId   選填 - 需和 betId 同時出現，或同時不出現
+     * @param string $memo          選填 - 註記
      * @return array
      */
-    function gameBonusTransLog($operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
+    function gameBonusTransLog($operatorCode,
+                               string $vendorCode,
+                               array $rawData,
+                               string $playerName,
+                               string $memberCode,
+                               string $type,
+                               float $amount,
+                               int $transferTime,
+                               string $traceId,
+                               string $eventId,
+                               string $gameCode = '',
+                               string $betId = '',
+                               string $parentBetId = '',
+                               string $memo = ''): array;
+
 }
 
