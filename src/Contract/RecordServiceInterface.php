@@ -91,28 +91,40 @@ interface RecordServiceInterface {
     function suspectBetlog($operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
 
     /**
-     * 儲存 bonus 注單
+     * 儲存紅利注單
+     *
+     * @param mixed $operatorCode 營商代碼
+     * @param string $vendorCode 遊戲商代碼
+     * @param array $requireInputs 必填欄位
+     * @param array $extraInputs 額外欄位
+     * @param array $rawData 原始資料
+     * @return array
+     */
+    function gameBonusTransLog($operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
+
+    /**
+     * 儲存紅利注單V2
      *
      * @param mixed $operatorCode   營商代碼(大寫)
      * @param string $vendorCode    遊戲商代碼(小寫)
-     * @param array $rawData        原始資料
      * @param string $playerName    必填 - GF 的玩家名稱
      * @param string $memberCode    必填 - GF 的玩家代碼
-     * @param string $type          必填 - type：activity, jackpot, tip
+     * @param string $type          必填 - 限定type：activity, jackpot, tip
      * @param float $vendorAmount   必填 - 遊戲商金額
-     * @param int $transferTime     必填 - 13 碼，毫秒 unix timestamp
+     * @param int $transactionTime  必填 - 13 碼，毫秒 unix timestamp
      * @param string $traceId       必填 - unique id
      * @param string $eventId       必填 - 事件 id
-     * @param array $extraInputs    選填
+     * @param array $extraInputs    選填 - [key=>value]
+     * @param array $rawData        必填 - 原始資料
      * @return array
      */
-    function gameBonusTransLog($operatorCode,
+    function gameBonusTransLogV2($operatorCode,
                                string $vendorCode,
                                string $playerName,
                                string $memberCode,
                                string $type,
                                float $vendorAmount,
-                               int $transferTime,
+                               int $transactionTime,
                                string $traceId,
                                string $eventId,
                                array $extraInputs,
