@@ -6,7 +6,6 @@ namespace GiocoPlus\Record\Contract;
  * 投注紀錄
  */
 interface RecordServiceInterface {
-
     /**
      * 大表投注紀錄
      *
