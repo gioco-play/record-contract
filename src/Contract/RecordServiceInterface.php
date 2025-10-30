@@ -114,7 +114,13 @@ interface RecordServiceInterface {
      * @param int $transactionTime  必填 - 13 位數，unixTimestampMs
      * @param string $traceId       必填 - unique id
      * @param string $eventId       必填 - 事件 id, 請勿填入空值
-     * @param array $extraInputs    選填 - game_code, bet_id, parent_bet_id, memo, jp_contribution(彩池貢獻金), jp_type(彩池類型)
+     * @param array $extraInputs    選填
+     * - game_code
+     * - bet_id (需和parent_bet_id 成對出現)
+     * - parent_bet_id (需和bet_id 成對出現)
+     * - memo
+     * - jp_contribution(彩池貢獻金)
+     * - jp_type(彩池類型)
      * @param array $rawData        必填 - 原始資料
      * @return array
      */
