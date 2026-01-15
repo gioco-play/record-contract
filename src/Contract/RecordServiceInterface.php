@@ -91,6 +91,8 @@ interface RecordServiceInterface {
     function suspectBetlog($operatorCode, string $vendorCode, array $requireInputs, array $extraInputs, array $rawData): array;
 
     /**
+     * @deprecated :已棄用，請改用 gameBonusTransLogV2
+     *
      * 儲存紅利注單
      *
      * @param mixed $operatorCode 營商代碼
